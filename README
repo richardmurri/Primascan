@@ -1,0 +1,33 @@
+Primascan Colorado 2400u Scanner Driver
+----------------------------------------
+
+What does this driver support?
+- This colorado 2400u driver only supports one color mode and one black\white mode.
+- Color is scanned at 100 dpi.
+- Black\White mode is optimized for text scanning and OCR, and scans at 200 dpi.
+
+How is it installed?
+- As long as g++ is installed and configured with the libusb libraries, this should compile.
+- Go to the directory with primascan.c in it, type 'make' in the command prompt and press enter.
+
+How do I run the driver?
+- You can run the driver directly or by using the provided shell script.
+- Running from the shell script
+    -> type './scanToGimp [text]' in the directory with the file 'scanToGimp'
+    -> If you want a text optimized scan type text where [text] appears in the line.
+       If you only want color, leave out [text]
+    -> By default, the scan will open GIMP, the Gnu Image Manipulation Program with the
+       new picture.  If you would like that to default to another program simply open
+       the 'scanToGimp' file, change 'gimp' to whatever other program you need, and
+       save the file.  In the future this will open with that other program.
+- Running directly:  type './primaScan [text] > [filename].pnm'
+    -> Replace [filename] with what you want for the name of the file.
+    -> If you want a text scan instead of color, type 'text' where is says [text].
+       If you only want color, leave out [text]
+    -> Open your new picture in whatever program you chose. (Hopefully it supports pnm)
+
+Why doesn't it work?
+- Well, there could be lots of reasons
+- You are probably trying to run it with insufficient permissions.  
+      See http://www.sane-project.org/README.linux
+      Read the section "Information about USB scanners" to learn how to get the right setup.

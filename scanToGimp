@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+var="./primascan $1"
+$var > /tmp/testImage.pnm
+
+gimp /tmp/testImage.pnm
+rm /tmp/testImage.pnm
+
+exit 0
+ 
